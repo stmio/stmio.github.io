@@ -1,13 +1,19 @@
 ---
+import { GITHUB_PROFILE_URL } from "../config";
+
 const today = new Date();
 ---
 
 <footer>
-  &copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+  &copy; {today.getFullYear()}
+  <a href={GITHUB_PROFILE_URL}>Sam Turner (stmio)</a>. All rights reserved.
 </footer>
 <style>
   footer {
     padding: 25px;
     text-align: center;
+  }
+  a {
+    color: #444;
   }
 </style>
