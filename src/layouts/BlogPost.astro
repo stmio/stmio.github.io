@@ -16,15 +16,24 @@ export interface Props {
 const {
   content: { title, description, pubDate, updatedDate, heroImage },
 } = Astro.props;
+
+const { minutesRead } = Astro.props.frontmatter;
 ---
 
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
     <style>
-      .title {
+      #post-info {
+        font-size: 0.75em;
+        margin-top: 0.5em;
+      }
+      #title {
         font-size: 2em;
-        margin: 0.25em 0 0;
+        margin: 0;
+      }
+      #reading-time {
+        color: #a1a1aa;
       }
       hr {
         border-top: 1px solid #ddd;
@@ -38,15 +47,25 @@ const {
     <main>
       <article>
         {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-        <h1 class="title">{title}</h1>
-        {pubDate && <time>{pubDate}</time>}
-        {
-          updatedDate && (
-            <div>
-              Last updated on <time>{updatedDate}</time>
-            </div>
-          )
-        }
+        <div id="post-info">
+          {minutesRead && <div id="reading-time">{minutesRead}</div>}
+          <h1 id="title">{title}</h1>
+          {
+            pubDate && (
+              <span>
+                Published <time>{new Date(pubDate).toUTCString()}</time>
+              </span>
+            )
+          }
+          {
+            updatedDate && (
+              <span>
+                <strong>&CenterDot;</strong> Last updated
+                <time>{new Date(updatedDate).toUTCString()}</time>
+              </span>
+            )
+          }
+        </div>
         <hr />
         <slot />
       </article>

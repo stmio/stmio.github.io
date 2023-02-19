@@ -14,7 +14,9 @@
     "@astrojs/mdx": "^0.12.0",
     "@astrojs/rss": "^1.0.3",
     "@astrojs/sitemap": "^1.0.0",
-    "astro": "^1.6.12"
+    "astro": "^1.6.12",
+    "mdast-util-to-string": "^3.1.1",
+    "reading-time": "^1.5.0"
   },
   "devDependencies": {
     "prettier": "^2.8.1",
