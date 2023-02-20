@@ -30,7 +30,7 @@ const { minutesRead } = Astro.props.frontmatter;
       }
       #title {
         font-size: 2em;
-        margin: 0;
+        margin: 0.2em 0;
       }
       #reading-time {
         color: #a1a1aa;
@@ -60,7 +60,7 @@ const { minutesRead } = Astro.props.frontmatter;
           {
             updatedDate && (
               <span>
-                <strong>&CenterDot;</strong> Last updated
+                &CenterDot; Last updated
                 <time>{new Date(updatedDate).toUTCString()}</time>
               </span>
             )
