@@ -1,7 +1,7 @@
 {
-  "name": "@example/blog",
+  "name": "@stmio/blog",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -11,12 +11,17 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/image": "^0.15.0",
     "@astrojs/mdx": "^0.12.0",
+    "@astrojs/prefetch": "^0.1.2",
     "@astrojs/rss": "^1.0.3",
     "@astrojs/sitemap": "^1.0.0",
-    "astro": "^1.6.12",
+    "astro": "^2.0.14",
+    "astro-compress": "^1.1.33",
+    "astro-critters": "^1.1.29",
     "mdast-util-to-string": "^3.1.1",
-    "reading-time": "^1.5.0"
+    "reading-time": "^1.5.0",
+    "sharp": "^0.31.3"
   },
   "devDependencies": {
     "prettier": "^2.8.1",

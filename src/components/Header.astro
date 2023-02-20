@@ -1,5 +1,7 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+import { Image } from "@astrojs/image/components";
+
 import {
   SITE_TITLE,
   TWITTER_PROFILE_URL,
@@ -10,12 +12,12 @@ import {
 ---
 
 <header>
-  <a href="/">
-    <img
+  <a href="/" rel="prefetch">
+    <Image
       src="/logos/sheep-transparent.svg"
-      width="128px"
-      height="128px"
       alt="Pixel Sheep Logo"
+      width={128}
+      height={128}
     />
     <h2>
       {SITE_TITLE}
