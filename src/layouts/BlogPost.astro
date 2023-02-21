@@ -47,7 +47,17 @@ const { minutesRead } = Astro.props.frontmatter;
     <Header />
     <main>
       <article>
-        {heroImage && <Image width={720} height={360} src={heroImage} alt="" />}
+        {
+          heroImage && (
+            <Image
+              width={720}
+              height={360}
+              src={heroImage}
+              alt=""
+              loading="eager"
+            />
+          )
+        }
         <div id="post-info">
           {minutesRead && <div id="reading-time">{minutesRead}</div>}
           <h1 id="title">{title}</h1>

@@ -17,8 +17,8 @@ export default defineConfig({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
     prefetch(),
-    compress(),
     critters(),
+    compress(),
   ],
   markdown: {
     remarkPlugins: [remarkReadingTime],
