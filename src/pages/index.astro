@@ -3,6 +3,12 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
+const posts = (await Astro.glob("./blog/*.md")).sort(
+  (a: any, b: any) =>
+    new Date(a.frontmatter.pubDate).valueOf() -
+    new Date(b.frontmatter.pubDate).valueOf()
+);
 ---
 
 <!DOCTYPE html>
@@ -13,7 +19,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
   <body>
     <Header title={SITE_TITLE} />
     <main>
-      <h1>🧑‍🚀 Hello, Astronaut!</h1>
+      <h1>Hello!</h1>
       <p>
         Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
         template. This template serves as a lightweight, minimally-styled starting
@@ -28,22 +34,38 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
       </p>
       <p>Here are a few ideas on how to get started with the template:</p>
       <ul>
-        <li>Edit this page in <code>src/pages/index.astro</code></li>
-        <li>
-          Edit the site header items in <code>src/components/Header.astro</code>
-        </li>
-        <li>
-          Add your name to the footer in
-          <code>src/components/Footer.astro</code>
-        </li>
-        <li>
-          Check out the included blog posts in <code>src/pages/blog/</code>
-        </li>
-        <li>
-          Customize the blog post page layout in
-          <code>src/layouts/BlogPost.astro</code>
-        </li>
+        {
+          posts
+            .slice(-5)
+            .reverse()
+            .map((post) => (
+              <li>
+                <div class="post">
+                  <div>
+                    <a href={post.url}>{post.frontmatter.title}</a>
+                  </div>
+                  <code class="post-date hidden-mobile">
+                    <time datetime={post.frontmatter.pubDate}>
+                      {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                        "en-gb",
+                        { year: "numeric", month: "short", day: "numeric" }
+                      )}
+                    </time>
+                  </code>
+                </div>
+                {post.frontmatter.description && (
+                  <div class="post-description nowrap">
+                    {post.frontmatter.description}
+                  </div>
+                )}
+              </li>
+            ))
+        }
       </ul>
+      <p>
+        You can browse all blog posts in the
+        <a href="/blog">archive</a>.<!--, or sort by tag.-->
+      </p>
       <p>
         Have fun! If you get stuck, remember to
         <a href="https://docs.astro.build/">read the docs</a>
@@ -58,5 +80,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
       </p>
     </main>
     <Footer />
+    <style>
+      .post {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 4px;
+        margin: 2px 0;
+      }
+      .post-description {
+        color: #5a6988;
+        opacity: 70;
+        font-style: italic;
+        margin: 2px 0;
+      }
+      .post-date {
+        margin: 0 2px 0 auto;
+      }
+    </style>
   </body>
 </html>

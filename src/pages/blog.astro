@@ -47,7 +47,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
               <li>
                 <time datetime={post.frontmatter.pubDate}>
                   {new Date(post.frontmatter.pubDate).toLocaleDateString(
-                    "en-us",
+                    "en-gb",
                     {
                       year: "numeric",
                       month: "short",

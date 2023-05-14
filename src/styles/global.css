@@ -76,3 +76,15 @@ blockquote {
   margin: 0px;
   font-style: italic;
 }
+
+@media (max-width: 500px) {
+  .hidden-mobile {
+    display: none;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

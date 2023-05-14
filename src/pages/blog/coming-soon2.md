@@ -1,9 +1,9 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "Blog posts are coming soon"
-description: "This is where a blog post description goes. Lorem ipsum dolor sit amet!"
-pubDate: "2023-02-19T16:35:45Z"
-updatedDate: "2023-02-19T16:47:52Z"
+title: "Waiting for a blog post..."
+description: "Lorem ipsum dolor sit amet..."
+pubDate: "2023-04-14T16:35:45Z"
+updatedDate: "2023-04-14T16:47:52Z"
 heroImage: "/placeholder-hero.jpg"
 tags: []
 ---
