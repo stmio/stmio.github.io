@@ -21,7 +21,7 @@
     "astro-critters": "^1.1.29",
     "mdast-util-to-string": "^3.1.1",
     "reading-time": "^1.5.0",
-    "sharp": "^0.32.1",
+    "sharp": "^0.31.3",
     "svgo": "^3.0.2"
   },
   "devDependencies": {
