@@ -1,5 +1,7 @@
 # stmio.github.io
 
+My [personal website and blog](https://stmio.net/), built with Astro.
+
 ### 🚀 Project Structure
 
 Inside of the Astro project, you'll see the following folders and files:
