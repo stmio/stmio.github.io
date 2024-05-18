@@ -10,9 +10,6 @@ import {
   GITHUB_PROFILE_URL,
 } from "../config";
 
-const MIT_CLIMATE_URL =
-  "https://climategrandchallenges.mit.edu/flagship-projects/bringing-computation-to-the-climate-challenge/";
-
 const posts = (await Astro.glob("./blog/*.md")).sort(
   (a: any, b: any) =>
     new Date(a.frontmatter.pubDate).valueOf() -
@@ -37,17 +34,15 @@ const posts = (await Astro.glob("./blog/*.md")).sort(
       <p>
         My main interest lies in Computer Science and its overlap with the
         natural sciences and mathematics. CS can be used as a gateway to solving
-        challenging problems in science, as well as
-        <a href={MIT_CLIMATE_URL}>helping us to hit long-term climate goals</a>.
-        I aspire to study Computer Science and further understand these topics
-        at university.
+        challenging problems in science, using tools such as Machine Learning.
       </p>
       <p>
-        Most recently, I have been exploring data and Machine Learning in Python
-        while working on building a Raspberry Pi weather station, which feeds
-        its data to an ML model, to predict tomorrow morning's weather. In the
-        past, I have built projects with JavaScript (and HTML/CSS), Python and
-        C#. <em>
+        Recently, I have been exploring Machine Learning in Python while working
+        on a Raspberry Pi weather station, which feeds its data to an ML model
+        so it can predict tomorrow morning's weather. In the past, I have built
+        projects with Python, JavaScript and C#. I'm also currently learning
+        Rust.
+        <em>
           Sometimes, I write about these projects in blog posts on this website!
         </em>
       </p>
@@ -82,7 +77,7 @@ const posts = (await Astro.glob("./blog/*.md")).sort(
         }
       </ul>
       <p>
-        You can browse all blog posts in the
+        You can browse all posts in the
         <a href="/blog">archive</a>, or <a href="#coming-soon">sort by tag</a>.
       </p>
       <p>

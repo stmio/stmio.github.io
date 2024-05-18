@@ -18,6 +18,27 @@ const {
   content: { title, description, pubDate, updatedDate, heroImage },
 } = Astro.props;
 
+const showTime =
+  new Date(pubDate).toDateString() === new Date(updatedDate).toDateString();
+
+const dateFormat = showTime
+  ? new Intl.DateTimeFormat("en-GB", {
+      timeZone: "UTC",
+      weekday: "short",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+    })
+  : new Intl.DateTimeFormat("en-GB", {
+      weekday: "short",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+
 const { minutesRead } = Astro.props.frontmatter;
 ---
 
@@ -64,7 +85,7 @@ const { minutesRead } = Astro.props.frontmatter;
           {
             pubDate && (
               <span>
-                Published <time>{new Date(pubDate).toUTCString()}</time>
+                Published <time>{dateFormat.format(new Date(pubDate))}</time>
               </span>
             )
           }
@@ -72,7 +93,7 @@ const { minutesRead } = Astro.props.frontmatter;
             updatedDate && (
               <span>
                 &CenterDot; Last updated
-                <time>{new Date(updatedDate).toUTCString()}</time>
+                <time>{dateFormat.format(new Date(updatedDate))}</time>
               </span>
             )
           }
