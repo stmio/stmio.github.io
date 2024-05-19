@@ -11,7 +11,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
   href={href}
   class:list={[className, { active: isActive }]}
   {...props}
-  data-astro-prefetch
+  data-astro-prefetch="viewport"
 >
   <slot />
 </a>
