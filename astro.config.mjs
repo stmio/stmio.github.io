@@ -8,7 +8,7 @@ import { remarkReadingTime } from "./src/remark-reading-time.mjs";
 // https://astro.build/config
 export default defineConfig({
   site: "https://stmio.net",
-  integrations: [mdx(), sitemap(), critters(), compress()],
+  integrations: [mdx(), sitemap(), critters(), compress({ SVG: false })],
   prefetch: true,
   markdown: {
     remarkPlugins: [remarkReadingTime],
