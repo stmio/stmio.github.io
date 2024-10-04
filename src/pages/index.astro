@@ -27,8 +27,8 @@ const posts = (await Astro.glob("./blog/*.md")).sort(
     <main>
       <h1>Hello!</h1>
       <p>
-        I'm Sam, a student from the West Midlands, UK, currently studying for my
-        A-levels. In my spare time, I enjoy building and
+        I'm Sam, a student from the West Midlands, UK, currently studying Computer
+        Science at the University of Warwick. In my spare time, I enjoy building and
         <a href={GITHUB_PROFILE_URL}>contributing to cool tech</a>.
       </p>
       <p>
@@ -42,50 +42,49 @@ const posts = (await Astro.glob("./blog/*.md")).sort(
         so it can predict tomorrow morning's weather. In the past, I have built
         projects with Python, JavaScript and C#. I'm also currently learning
         Rust.
-        <em>
-          Sometimes, I write about these projects in blog posts on this website!
-        </em>
+        <!-- <em> -->
+        <!--   Sometimes, I write about these projects in blog posts on this website! -->
+        <!-- </em> -->
       </p>
-      <p>Have a look at this short list of my most recent blog posts:</p>
-      <ul>
-        {
-          posts
-            .slice(-5)
-            .reverse()
-            .map((post) => (
-              <li>
-                <div class="post">
-                  <div>
-                    <a href={post.url}>{post.frontmatter.title}</a>
-                  </div>
-                  <code class="post-date hidden-mobile">
-                    <time datetime={post.frontmatter.pubDate}>
-                      {new Date(post.frontmatter.pubDate).toLocaleDateString(
-                        "en-gb",
-                        { year: "numeric", month: "short", day: "numeric" }
-                      )}
-                    </time>
-                  </code>
-                </div>
-                {post.frontmatter.description && (
-                  <div class="post-description nowrap">
-                    {post.frontmatter.description}
-                  </div>
-                )}
-              </li>
-            ))
-        }
-      </ul>
+      <!-- <p>Have a look at this short list of my most recent blog posts:</p> -->
+      <!-- <ul> -->
+      <!--   { -->
+      <!--     posts -->
+      <!--       .slice(-5) -->
+      <!--       .reverse() -->
+      <!--       .map((post) => ( -->
+      <!--         <li> -->
+      <!--           <div class="post"> -->
+      <!--             <div> -->
+      <!--               <a href={post.url}>{post.frontmatter.title}</a> -->
+      <!--             </div> -->
+      <!--             <code class="post-date hidden-mobile"> -->
+      <!--               <time datetime={post.frontmatter.pubDate}> -->
+      <!--                 {new Date(post.frontmatter.pubDate).toLocaleDateString( -->
+      <!--                   "en-gb", -->
+      <!--                   { year: "numeric", month: "short", day: "numeric" } -->
+      <!--                 )} -->
+      <!--               </time> -->
+      <!--             </code> -->
+      <!--           </div> -->
+      <!--           {post.frontmatter.description && ( -->
+      <!--             <div class="post-description nowrap"> -->
+      <!--               {post.frontmatter.description} -->
+      <!--             </div> -->
+      <!--           )} -->
+      <!--         </li> -->
+      <!--       )) -->
+      <!--   } -->
+      <!-- </ul> -->
+      <!-- <p> -->
+      <!--   You can browse all posts in the -->
+      <!--   <a href="/blog">archive</a>, or <a href="#coming-soon">sort by tag</a>. -->
+      <!-- </p> -->
       <p>
-        You can browse all posts in the
-        <a href="/blog">archive</a>, or <a href="#coming-soon">sort by tag</a>.
-      </p>
-      <p>
-        If you would like to contact me, please send me a message on
-        <a href={TWITTER_PROFILE_URL}>Twitter</a>
-        or through <a href={LINKEDIN_PROFILE_URL}>LinkedIn</a>. I do not have a
-        public email address at the moment, but you will find it here when I
-        have one!
+        If you would like to contact me, please send me a message
+        through <a href={LINKEDIN_PROFILE_URL}>LinkedIn</a>. 
+        <!-- I do not have a public email address at the moment, but you -->
+        <!-- will find it here when I have one! -->
       </p>
     </main>
     <Footer />
