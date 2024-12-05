@@ -17,7 +17,7 @@ const posts = (await Astro.glob("./blog/*.md")).sort(
 );
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
@@ -28,8 +28,9 @@ const posts = (await Astro.glob("./blog/*.md")).sort(
       <h1>Hello!</h1>
       <p>
         I'm Sam, a student from the West Midlands, UK, currently studying Computer
-        Science at the University of Warwick. In my spare time, I enjoy building and
-        <a href={GITHUB_PROFILE_URL}>contributing to cool tech</a>.
+        Science at the <a href="https://dcs.warwick.ac.uk/">University of Warwick</a>.
+        In my spare time, I enjoy building
+        and <a href={GITHUB_PROFILE_URL}>contributing to cool tech</a>.
       </p>
       <p>
         My main interest lies in Computer Science and its overlap with the
@@ -81,8 +82,11 @@ const posts = (await Astro.glob("./blog/*.md")).sort(
       <!--   <a href="/blog">archive</a>, or <a href="#coming-soon">sort by tag</a>. -->
       <!-- </p> -->
       <p>
-        If you would like to contact me, please send me a message
-        through <a href={LINKEDIN_PROFILE_URL}>LinkedIn</a>. 
+        If you would like to contact me, please send me a message through <a
+          href={LINKEDIN_PROFILE_URL}
+        >
+          LinkedIn
+        </a>.
         <!-- I do not have a public email address at the moment, but you -->
         <!-- will find it here when I have one! -->
       </p>
