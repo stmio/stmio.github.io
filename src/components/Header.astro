@@ -1,75 +1,46 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
-import { Image } from "astro:assets";
-
-import {
-  SITE_TITLE,
-  TWITTER_PROFILE_URL,
-  GITHUB_PROFILE_URL,
-  STACKOVERFLOW_PROFILE_URL,
-  LINKEDIN_PROFILE_URL,
-} from "../config";
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+import { SITE } from "@consts";
 ---
 
-<header>
-  <a href="/" data-astro-prefetch>
-    <Image
-      src="/logos/sheep-transparent.svg"
-      alt="Sheep Icon"
-      format="svg"
-      loading="eager"
-      width={128}
-      height={128}
-    />
-    <h2>
-      {SITE_TITLE}
-    </h2>
-  </a>
-  <nav>
-    <!-- <HeaderLink href="/">Home</HeaderLink> -->
-    <!-- <HeaderLink href="/blog">Blog</HeaderLink> -->
-    <!-- <HeaderLink href="/about">About</HeaderLink> -->
-
-    <!-- <HeaderLink href={TWITTER_PROFILE_URL} target="_blank" aria-label="Twitter"> -->
-    <!--   <i class="fa-brands fa-twitter fa-fw fa-lg"></i> -->
-    <!-- </HeaderLink> -->
-    <HeaderLink href={GITHUB_PROFILE_URL} target="_blank" aria-label="GitHub">
-      <i class="fa-brands fa-github fa-fw fa-lg"></i>
-    </HeaderLink>
-    <HeaderLink
-      href={LINKEDIN_PROFILE_URL}
-      target="_blank"
-      aria-label="LinkedIn"
-    >
-      <i class="fa-brands fa-linkedin fa-fw fa-lg"></i>
-    </HeaderLink>
-    <HeaderLink
-      href={STACKOVERFLOW_PROFILE_URL}
-      target="_blank"
-      aria-label="Stack Overflow"
-    >
-      <i class="fa-brands fa-stack-overflow fa-fw fa-lg"></i>
-    </HeaderLink>
-    <HeaderLink href="/rss.xml" target="_blank" aria-label="RSS Feed">
-      <i class="fa-solid fa-rss fa-fw fa-lg"></i>
-    </HeaderLink>
-  </nav>
+<header transition:persist>
+  <Container>
+    <div class="flex flex-wrap justify-between gap-y-2">
+      <Link href="/" underline={false}>
+        <div class="font-semibold">
+          {SITE.TITLE}&nbsp;🔬
+        </div>
+      </Link>
+      <nav class="flex items-center gap-1 text-sm">
+        <Link href="/blog">blog</Link>
+        <span>
+          {`/`}
+        </span>
+        <Link href="/projects">projects</Link>
+        <span>
+          {`/`}
+        </span>
+        <button
+          id="magnifying-glass"
+          aria-label="Search"
+          class="flex items-center rounded-sm border border-black/15 bg-neutral-100 px-2 py-1 text-xs transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/20 dark:bg-neutral-900 dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+        >
+          <svg
+            height="16"
+            stroke-linejoin="round"
+            viewBox="0 0 16 16"
+            width="16"
+            style="color: currentcolor;"
+            ><path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M3.5 7C3.5 5.067 5.067 3.5 7 3.5C8.933 3.5 10.5 5.067 10.5 7C10.5 7.88461 10.1718 8.69256 9.63058 9.30876L9.30876 9.63058C8.69256 10.1718 7.88461 10.5 7 10.5C5.067 10.5 3.5 8.933 3.5 7ZM9.96544 11.0261C9.13578 11.6382 8.11014 12 7 12C4.23858 12 2 9.76142 2 7C2 4.23858 4.23858 2 7 2C9.76142 2 12 4.23858 12 7C12 8.11014 11.6382 9.13578 11.0261 9.96544L14.0303 12.9697L14.5607 13.5L13.5 14.5607L12.9697 14.0303L9.96544 11.0261Z"
+              fill="currentColor"></path></svg
+          >
+          &nbsp;Search
+        </button>
+      </nav>
+    </div>
+  </Container>
 </header>
-<style>
-  .icon::before {
-    display: inline-block;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-  }
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-  header {
-    margin: 0em 0 2em;
-  }
-  h2 {
-    margin: 0;
-    margin-bottom: 0.5em;
-  }
-</style>
