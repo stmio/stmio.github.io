@@ -1,29 +1,34 @@
 {
-  "name": "@stmio/blog",
+  "name": "astro-micro",
   "type": "module",
-  "version": "1.0.0",
-  "private": true,
+  "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.0.0",
-    "@astrojs/rss": "^4.0.6",
-    "@astrojs/sitemap": "^3.1.4",
-    "astro": "^4.8.6",
-    "astro-compress": "^2.0.5",
-    "astro-critters": "^2.0.1",
-    "mdast-util-to-string": "^3.1.1",
-    "reading-time": "^1.5.0",
-    "sharp": "^0.32.6",
-    "svgo": "^3.3.2"
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^4.2.3",
+    "@astrojs/rss": "^4.0.11",
+    "@astrojs/sitemap": "^3.3.0",
+    "@fontsource/geist-mono": "^5.2.5",
+    "@fontsource/geist-sans": "^5.2.5",
+    "@tailwindcss/vite": "^4.1.3",
+    "astro": "^5.6.1",
+    "astro-pagefind": "^1.8.3",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss": "^4.1.3",
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
-    "prettier": "^2.8.1",
-    "prettier-plugin-astro": "^0.9.0"
+    "@tailwindcss/typography": "^0.5.16",
+    "pagefind": "^1.3.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.11"
   }
 }
