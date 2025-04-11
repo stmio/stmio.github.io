@@ -12,7 +12,10 @@ import BackToTop from "@components/BackToTop.astro";
       </div>
     </div>
     <div class="flex items-center justify-between">
-      <div>&copy; {new Date().getFullYear()} • {SITE.TITLE} 🔬</div>
+      <div class="flex flex-col">
+        <div>&copy; {new Date().getFullYear()} • {SITE.TITLE}</div>
+        <div class="text-xs">Last updated {new Date().toLocaleDateString("en-GB", { month: "long", day: "numeric" })}</div>
+      </div>
       <div class="flex flex-wrap items-center gap-1.5">
         <button
           id="light-theme-button"
