@@ -1,11 +1,32 @@
-# Introducing [Astro Micro 🔬](https://astro-micro.vercel.app/)
+# stmio.github.io
 
-Astro Micro is an accessible theme for Astro. It's a fork of [Mark Horn's](https://github.com/markhorn-dev) popular theme [Astro Nano](https://astro-nano-demo.vercel.app/). Like Nano, Micro comes with zero frameworks installed.
+This is the repo for my [personal website and blog](https://stmio.net/), built with Astro.
 
-Micro adds features like [Pagefind](https://pagefind.app) for search, [Giscus](https://giscus.app) for comments, and more. For a full list of changes, see this [blog post](https://astro-micro.vercel.app/blog/00-micro-changelog).
+It is based on the [Astro Micro](https://astro-micro.vercel.app/) theme, an extension to the popular [Astro Nano](https://astro-nano-demo.vercel.app/). 
 
-Micro still comes with everything great about Nano — full type safety, a sitemap, an RSS feed, and Markdown + MDX support. Styled with TailwindCSS and preconfigured with system, light, and dark themes.
+The website has:
+- [Pagefind](https://pagefind.app) for search
+- [Giscus](https://giscus.app) for comments
+- Full type safety with Typescript
+- Markdown and MDX support for posts
+- System, light and dark themes
+- Blog post tags
+- Projects pages
+- An RSS feed
+- A sitemap
+- Tailwind support
+- ...and more!
 
----
+### Commands
 
-![astro-micro](https://github.com/user-attachments/assets/fc9b55b9-53e5-4933-9d23-936e1c61e6c2)
+All commands are run from the root of the project, from a terminal:
+
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `npm install`          | Installs dependencies                            |
+| `npm run dev`          | Starts local dev server at `localhost:3000`      |
+| `npm run build`        | Build your production site to `./dist/`          |
+| `npm run preview`      | Preview your build locally, before deploying     |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro --help` | Get help using the Astro CLI                     |
+
