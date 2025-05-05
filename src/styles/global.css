@@ -42,7 +42,7 @@
 
   html,
   body {
-    @apply h-fit w-full;
+    @apply h-fit w-full min-h-screen min-w-full;
   }
 
   body {
