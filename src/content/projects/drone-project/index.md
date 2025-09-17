@@ -6,12 +6,12 @@ demoURL: "https://github.com/stmio/drone/blob/main/docs/summit.pdf"
 repoURL: "https://github.com/stmio/drone"
 ---
 
-![Astro Sphere](/astro-sphere.jpg)
+## Description
 
 `drone` is a reinforcement learning based drone controller and simulator tool for the [Warwick AI](https://warwick.ai) drone project.
 
 This project was presented at the 2025 Warwick Artificial Intelligence summit. The slides for this talk are available [here](https://github.com/stmio/drone/blob/main/docs/summit.pdf).
 
-## 🏛️ License
+## License
 
 MIT
